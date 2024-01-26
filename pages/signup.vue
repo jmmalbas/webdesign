@@ -23,7 +23,8 @@
     </form>
     <nav class="navbar">
       <div class="buttons">
-        <button class="login-button">Home</button>
+        
+        <NuxtLink to="/" class="signup-button">Home</NuxtLink>
         <!--<button class="signup-button">Sign Up</button>-->
         <!--<NuxtLink to="/signup" class="signup-button">Sign Up</NuxtLink>-->
       </div>

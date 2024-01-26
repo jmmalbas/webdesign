@@ -2,9 +2,12 @@
   <div class="welcome-page">
     <nav class="navbar">
       <div class="buttons">
-        <button class="login-button">Login</button>
+        <!--<button class="login-button">Login</button>-->
+        <NuxtLink to="/login" class="signup-button">Log In</NuxtLink>
         <!--<button class="signup-button">Sign Up</button>-->
         <NuxtLink to="/signup" class="signup-button">Sign Up</NuxtLink>
+        <NuxtLink to="/employees" class="signup-button">Employees</NuxtLink>
+        <NuxtLink to="/departments" class="signup-button">Departments</NuxtLink>
       </div>
     </nav>
     <div class="content-container">
