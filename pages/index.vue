@@ -3,11 +3,11 @@
     <nav class="navbar">
       <div class="buttons">
         <!--<button class="login-button">Login</button>-->
-        <NuxtLink to="/login" class="signup-button">Log In</NuxtLink>
+        <NuxtLink to="/login" class="sign-button">Log In</NuxtLink>
         <!--<button class="signup-button">Sign Up</button>-->
-        <NuxtLink to="/signup" class="signup-button">Sign Up</NuxtLink>
-        <NuxtLink to="/employees" class="signup-button">Employees</NuxtLink>
-        <NuxtLink to="/departments" class="signup-button">Departments</NuxtLink>
+        <NuxtLink to="/signup" class="sign-button">Sign Up</NuxtLink>
+        <NuxtLink to="/employees" class="sign-button">Employees</NuxtLink>
+        <NuxtLink to="/departments" class="sign-button">Departments</NuxtLink>
       </div>
     </nav>
     <div class="content-container">
@@ -67,7 +67,7 @@ export default {
 }
 
 .login-button,
-.signup-button {
+.sign-button {
   padding: 5px 30px;
   font-size: 1em;
   color: #333;
@@ -79,7 +79,7 @@ export default {
 }
 
 .login-button:hover,
-.signup-button:hover {
+.sign-button:hover {
   background-color: #eee; /* Light gray background color on hover */
 }
 

@@ -1,17 +1,21 @@
 <template>
-  <main>
+  <main style="background-image: url('https://www.chesterapps.co.uk/wp-content/uploads/2022/04/data-intregration.png'); 
+  background-size: cover; background-position: center; height: 100vh;">
     <div class="employees-container">
-      <h1>Employees</h1>
-      <!-- render the fetched and sorted data in two columns -->
-      <div class="employee-columns">
-        <div v-for="employee in sortedEmployees" :key="employee.EMPLOYEE_ID" class="employee-item">
-          {{ employee.FIRST_NAME }} {{ employee.LAST_NAME }}
+          <h1 class="emp">Employees</h1>
+      <!-- Create a container for the employee columns with a transparent background -->
+      <div class="employee-container">
+        <div class="employee-columns">
+          <div v-for="employee in sortedEmployees" :key="employee.EMPLOYEE_ID" class="employee-item">
+            {{ employee.FIRST_NAME }} {{ employee.LAST_NAME }}
+          </div>
         </div>
       </div>
     </div>
     <nav class="navbar">
       <div class="buttons">
         <NuxtLink to="/" class="signup-button">Home</NuxtLink>
+        <NuxtLink to="/departments" class="signup-button">Departments</NuxtLink>
         <!-- Add any other navigation buttons as needed -->
       </div>
     </nav>
@@ -19,34 +23,31 @@
 </template>
 
 <style scoped>
-body {
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  background: url('https://www.chesterapps.co.uk/wp-content/uploads/2022/04/data-intregration.png') no-repeat center center fixed;
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
+
 
 .employees-container {
   text-align: center;
   margin: auto;
-  max-width: 800px; /* Adjust the max-width as needed */
+  max-width: 1500px; /* Adjust the max-width as needed */
+}
+
+/* Container for employee columns with a transparent background */
+.employee-container {
+  background-color: rgba(0, 0, 0, 0.5); /* Transparent black background */
+  padding: 20px; /* Adjust the padding as needed */
+  border-radius: 10px; /* Add border-radius for rounded corners */
 }
 
 .employee-columns {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px; /* Adjust the gap as needed */
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px; /* Adjust the gap as needed */
 }
 
 .employee-item {
-  padding: 8px;
+  padding: 10px;
   border: 1px solid #ccc;
-  background-color: black; /* Set black background */
-  color: white; /* Set white font color */
+  color: rgb(183, 182, 182); /* Set white font color */
   transition: transform 0.3s ease; /* Add transition for a smooth effect */
 }
 
@@ -86,6 +87,18 @@ body {
 .signup-button:hover {
   background-color: #eee; /* Light gray background color on hover */
 }
+
+.emp {
+  color: white;
+  font-size: 3.4em;
+  margin: 20px 0; /* Add margin to the bottom */
+  transition: color 0.3s ease;
+}
+
+.emp:hover {
+  color: black;
+}
+
 </style>
 
 <script setup>

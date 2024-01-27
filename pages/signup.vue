@@ -4,13 +4,13 @@
       <h3>Signup</h3>
 
       <label for="firstname">First Name:</label>
-      <input type="firstname" id="firstname" v-model="userData.password" required />
+      <input type="firstname" id="firstname" v-model="userData.firstname" required />
 
       <label for="lastname">Last Name:</label>
-      <input type="lastname" id="lastname" v-model="userData.password" required />
+      <input type="lastname" id="lastname" v-model="userData.lastname" required />
 
       <label for="username">Username:</label>
-      <input type="username" id="username" v-model="userData.password" required />
+      <input type="username" id="username" v-model="userData.username" required />
 
       <label for="email">Email:</label>
       <input type="email" id="email" v-model="userData.email" required />

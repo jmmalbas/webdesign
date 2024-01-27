@@ -1,51 +1,108 @@
 <template>
-  <main>
-    <div class="centered-container">
-      <h1>Departments</h1>
-      <!-- render the fetched and sorted data in two columns -->
-      <div class="department-columns">
-        <div v-for="department in sortedDepartments" :key="department.DEPARTMENT_ID" class="department-item">
-          {{ department.DEPARTMENT_NAME }}
+  <main style="background-image: url('https://www.chesterapps.co.uk/wp-content/uploads/2022/04/data-intregration.png'); 
+    background-size: cover; background-position: center; height: 100vh;">
+    <div class="departments-container">
+      <h1 class="dept">Departments</h1>
+      <!-- Create a container for the department columns with a transparent background -->
+      <div class="department-container">
+        <div class="department-columns">
+          <div v-for="department in sortedDepartments" :key="department.DEPARTMENT_ID" class="department-item">
+            {{ department.DEPARTMENT_NAME }}
+          </div>
         </div>
       </div>
     </div>
+    <nav class="navbar">
+      <div class="buttons">
+        <NuxtLink to="/" class="signup-button">Home</NuxtLink>
+        <NuxtLink to="/employees" class="signup-button">Employees</NuxtLink>
+        <!-- Add any other navigation buttons as needed -->
+      </div>
+    </nav>
   </main>
 </template>
 
 <style scoped>
-.centered-container {
+
+.departments-container {
   text-align: center;
   margin: auto;
-  max-width: 800px; /* Adjust the max-width as needed */
+  max-width: 1000px; /* Adjust the max-width as needed */
+}
+
+/* Container for department columns with a transparent background */
+.department-container {
+  background-color: rgba(0, 0, 0, 0.5); /* Transparent black background */
+  padding: 20px; /* Adjust the padding as needed */
+  border-radius: 10px; /* Add border-radius for rounded corners */
 }
 
 .department-columns {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px; /* Adjust the gap as needed */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px; /* Adjust the gap as needed */
 }
 
 .department-item {
-  padding: 8px;
+  padding: 10px;
   border: 1px solid #ccc;
-  background-color: black; /* Set black background */
-  color: white; /* Set white font color */
-  transition: transform 0.3s ease; /* Add transition for smooth effect */
+  color: rgb(183, 182, 182); /* Set white font color */
+  transition: transform 0.3s ease; /* Add transition for a smooth effect */
 }
 
 .department-item:hover {
   transform: scale(1.1); /* Apply zoom effect on hover */
 }
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  background: rgba(255, 255, 255, 0.7); /* Background color for the navbar */
+  padding: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle effect */
+  margin: auto; /* Center the navbar */
+  display: flex; /* Align the buttons horizontally */
+  justify-content: flex-end; /* Push the buttons to the right */
+}
+
+.buttons {
+  margin-right: 30px; /* Adjusted margin to move buttons a bit to the left */
+}
+
+.signup-button {
+  padding: 5px 30px;
+  font-size: 1em;
+  color: #333;
+  background-color: #fff; /* White background color */
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.signup-button:hover {
+  background-color: #eee; /* Light gray background color on hover */
+}
+
+.dept {
+  color: white;
+  font-size: 3.4em;
+  margin: 20px 0; /* Add margin to the bottom */
+  transition: color 0.3s ease;
+}
+
+.dept:hover {
+  color: black;
+}
 </style>
 
-<!-- Fetch data and sort departments -->
 <script setup>
-const { data, error } = await useFetch("/api/departments", {
+const { data } = await useFetch("/api/departments", {
   headers: useRequestHeaders(["cookie"]),
 });
-console.log("Data:", data);
-console.log("Error:", error);
-
 let departments = data._value.departments;
 
 // Sort the departments alphabetically
