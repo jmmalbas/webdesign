@@ -1,5 +1,5 @@
 <template>
-  <main style="background-image: url('https://www.chesterapps.co.uk/wp-content/uploads/2022/04/data-intregration.png'); 
+  <main style="background-image: url('https://img.freepik.com/free-vector/worldwide-connection-blue-background-illustration-vector_53876-76826.jpg?w=1380&t=st=1706417840~exp=1706418440~hmac=8f5e49608254d1d0525f522a7aaee378db1e6139bc45cdcd2c849430143d0505'); 
     background-size: cover; background-position: center; height: 100vh;">
     <div class="departments-container">
       <h1 class="dept">Departments</h1>

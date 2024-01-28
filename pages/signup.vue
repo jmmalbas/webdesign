@@ -18,15 +18,11 @@
       <label for="password">Password:</label>
       <input type="password" id="password" v-model="userData.password" required />
 
-
       <button type="submit">Signup</button>
     </form>
     <nav class="navbar">
       <div class="buttons">
-        
         <NuxtLink to="/" class="signup-button">Home</NuxtLink>
-        <!--<button class="signup-button">Sign Up</button>-->
-        <!--<NuxtLink to="/signup" class="signup-button">Sign Up</NuxtLink>-->
       </div>
     </nav>
   </div>
@@ -58,7 +54,7 @@ export default {
   text-align: center;
   margin: auto;
   padding: 20px;
-  background: rgba(255, 255, 255, 0.7) url('https://www.chesterapps.co.uk/wp-content/uploads/2022/04/data-intregration.png') no-repeat center center fixed;
+  background: rgba(255, 255, 255, 0.7) url('https://img.freepik.com/free-vector/worldwide-connection-blue-background-illustration-vector_53876-76826.jpg?w=1380&t=st=1706417840~exp=1706418440~hmac=8f5e49608254d1d0525f522a7aaee378db1e6139bc45cdcd2c849430143d0505') no-repeat center center fixed;
   background-size: cover;
   height: 100vh;
   display: flex;
@@ -74,6 +70,13 @@ form {
   border-radius: 10px;
 }
 
+h3,
+label,
+input,
+button {
+  color: white; /* Change text color to white for all elements */
+}
+
 h3 {
   text-align: center;
 }
@@ -86,8 +89,13 @@ label {
 input {
   width: 100%;
   padding: 8px;
-  margin-top: 5px;
+  margin-top: 10px;
   box-sizing: border-box;
+  color: black; /* Change text color to white */
+}
+
+input:focus {
+  color: black; /* Change text color to black when focused */
 }
 
 button {
@@ -96,7 +104,9 @@ button {
   padding: 10px 20px;
   cursor: pointer;
   border: none;
+  margin-top: 10px; /* Add margin to the top of the button */
 }
+
 .navbar {
   position: fixed;
   top: 0;
@@ -110,7 +120,6 @@ button {
   display: flex; /* Align the buttons horizontally */
   justify-content: flex-end; /* Push the buttons to the right */
 }
-
 
 .buttons {
   margin-right: 30px; /* Adjusted margin to move buttons a bit to the left */

@@ -40,7 +40,7 @@ export default {
   text-align: center;
   margin: auto;
   padding: 20px;
-  background: rgba(255, 255, 255, 0.7) url('https://www.chesterapps.co.uk/wp-content/uploads/2022/04/data-intregration.png') no-repeat center center fixed;
+  background: rgba(255, 255, 255, 0.7) url('https://img.freepik.com/free-vector/worldwide-connection-blue-background-illustration-vector_53876-76826.jpg?w=1380&t=st=1706417840~exp=1706418440~hmac=8f5e49608254d1d0525f522a7aaee378db1e6139bc45cdcd2c849430143d0505') no-repeat center center fixed;
   background-size: cover;
   height: 100vh;
   display: flex;
